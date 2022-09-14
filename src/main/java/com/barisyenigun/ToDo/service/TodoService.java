@@ -5,6 +5,7 @@ import com.barisyenigun.ToDo.exception.TodoNotFoundException;
 import com.barisyenigun.ToDo.repository.TodoRepository;
 import com.barisyenigun.ToDo.request.TodoRequest;
 import com.barisyenigun.ToDo.response.TodoResponse;
+import com.barisyenigun.ToDo.response.UserResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -72,7 +73,7 @@ public class TodoService {
         return TodoResponse.builder()
                 .id(todo.getId())
                 .text(todo.getText())
-                .user(todo.getUser())
+                .userResponse(UserResponse.fromEntity(todo.getUser()))
                 .build();
     }
 

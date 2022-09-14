@@ -13,7 +13,7 @@ import lombok.Setter;
 public class UserResponse {
     private Long id;
     private String username;
-    private String password;
+
 
     public static UserResponse fromEntity(User user){
         if (user == null){
@@ -22,7 +22,6 @@ public class UserResponse {
         return UserResponse.builder()
                 .id(user.getId())
                 .username(user.getUsername())
-                .password(user.getPassword())
                 .build();
     }
 }

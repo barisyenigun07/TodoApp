@@ -16,11 +16,8 @@ public class User {
     @SequenceGenerator(name = "user_id_seq", sequenceName = "user_id_seq", allocationSize = 1)
     @Column(name = "id")
     private Long id;
-    @NonNull
-    @Column(name = "username",unique = true)
+    @Column(name = "username",unique = true,nullable = false)
     private String username;
-    @NonNull
-    @Column(name = "password",unique = true)
+    @Column(name = "password",unique = true,nullable = false)
     private String password;
-
 }

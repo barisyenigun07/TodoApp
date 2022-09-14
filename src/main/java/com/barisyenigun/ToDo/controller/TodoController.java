@@ -2,7 +2,6 @@ package com.barisyenigun.ToDo.controller;
 import com.barisyenigun.ToDo.request.TodoRequest;
 import com.barisyenigun.ToDo.response.TodoResponse;
 import com.barisyenigun.ToDo.service.TodoService;
-import com.barisyenigun.ToDo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,12 +12,10 @@ import java.util.List;
 public class TodoController {
 
     private final TodoService todoService;
-    private final UserService userService;
 
     @Autowired
-    public TodoController(TodoService todoService, UserService userService){
+    public TodoController(TodoService todoService){
         this.todoService = todoService;
-        this.userService = userService;
     }
     @GetMapping
     public List<TodoResponse> getTodos(){
